@@ -1,7 +1,7 @@
 #!/bin/bash
              
 ##配置ip等
-#sed -i 's/192.168.1.1/192.168.1.110/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
 #修改默认IP地址
 sed -i "s/192\.168\.[0-9]*\.[0-9]*/$OWRT_IP/g" ./package/base-files/files/bin/config_generate
 #修改默认主机名
@@ -19,9 +19,9 @@ sed -i 's/time.ustc.edu.cn/cn.ntp.org.cn/' package/base-files/files/bin/config_g
 sed -i 's/cn.pool.ntp.org/pool.ntp.org/' package/base-files/files/bin/config_generate
 
 #固件版本号添加个人标识和日期
-[ -e package/lean/default-settings/files/zzz-default-settings ] && sed -i "s/DISTRIB_DESCRIPTION='.*OpenWrt '/DISTRIB_DESCRIPTION='莫小小($(TZ=UTC-8 date +%Y.%m.%d))@OpenWrt '/g" package/lean/default-settings/files/zzz-default-settings
+[ -e package/lean/default-settings/files/zzz-default-settings ] && sed -i "s/DISTRIB_DESCRIPTION='.*OpenWrt '/DISTRIB_DESCRIPTION='JacKwok($(TZ=UTC-8 date +%Y.%m.%d))@OpenWrt '/g" package/lean/default-settings/files/zzz-default-settings
 #[ ! -e package/lean/default-settings/files/zzz-default-settings ] && sed -i "/DISTRIB_DESCRIPTION='*'/d" package/base-files/files/etc/openwrt_release
-[ ! -e package/lean/default-settings/files/zzz-default-settings ] && echo "DISTRIB_DESCRIPTION='莫小小($(TZ=UTC-8 date +%Y.%m.%d))@lean '" >> package/base-files/files/etc/openwrt_release
+[ ! -e package/lean/default-settings/files/zzz-default-settings ] && echo "DISTRIB_DESCRIPTION='JacKwok($(TZ=UTC-8 date +%Y.%m.%d))@lean '" >> package/base-files/files/etc/openwrt_release
 
 # 设置密码为password
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/' package/base-files/files/etc/shadow
@@ -51,15 +51,16 @@ echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp 
 # Modify default banner
 echo 'Modify default banner...'
 build_date=$(date +"%Y-%m-%d %H:%M:%S")
-echo "                                                               " >> package/base-files/files/etc/banner
-echo " ██████╗ ██████╗ ███████╗███╗   ██╗██╗    ██╗██████╗ ████████╗ " >> package/base-files/files/etc/banner
-echo "██╔═══██╗██╔══██╗██╔════╝████╗  ██║██║    ██║██╔══██╗╚══██╔══╝ " >> package/base-files/files/etc/banner
-echo "██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║ █╗ ██║██████╔╝   ██║    " >> package/base-files/files/etc/banner
-echo "██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║███╗██║██╔══██╗   ██║    " >> package/base-files/files/etc/banner
-echo "╚██████╔╝██║     ███████╗██║ ╚████║╚███╔███╔╝██║  ██║   ██║    " >> package/base-files/files/etc/banner
-echo " ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝    " >> package/base-files/files/etc/banner
-echo " ------------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo " %D %C ${build_date} by 莫小小[我家猫]                         " >> package/base-files/files/etc/banner
-echo " ------------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo " ------------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo "                                                               " >> package/base-files/files/etc/banner
+echo "                                                             " >> package/base-files/files/etc/banner
+echo "   /███  _     __    __ /█  /█/                   /█         " >> package/base-files/files/etc/banner
+echo "  |_  █ / ████ \ █  /█/| █ /█/  _          /████ | █  /█/    " >> package/base-files/files/etc/banner
+echo "     |█|____  █ \ █/█/ | ███/  / █| █| █| /█__  █| █ /█/     " >> package/base-files/files/etc/banner
+echo " /█  |█ /██████  \ █/  | █ █   | █| █| █|| █  \ █| ███/      " >> package/base-files/files/etc/banner
+echo "| █  |█/██__  █  /█/   | █\ █  | █| █| █|| █  | █| █_ █      " >> package/base-files/files/etc/banner
+echo "|  ███/\ ██████ /█/    | █ \ █\| ███/███/|  ████/| █ \ █\    " >> package/base-files/files/etc/banner
+echo " \___/  \_____/\_/     |_/  \_/ \__/\__/  \____/ |_/  \_/    " >> package/base-files/files/etc/banner
+echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
+echo " %D %C ${build_date}       by JacKwok                       " >> package/base-files/files/etc/banner
+echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
+echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
+echo "                                                             " >> package/base-files/files/etc/banner
