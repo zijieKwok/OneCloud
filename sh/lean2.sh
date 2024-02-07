@@ -47,20 +47,3 @@ echo 'iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53'
 # 把局域网内所有客户端对外ipv6的53端口查询请求，都劫持指向路由器(ip6tables -n -t nat -L PREROUTING -v --line-number)(ip6tables -t nat -D PREROUTING 1)
 echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53' >> package/network/config/firewall/files/firewall.user
 echo '[ -n "$(command -v ip6tables)" ] && ip6tables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> package/network/config/firewall/files/firewall.user
-
-# Modify default banner
-echo 'Modify default banner...'
-build_date=$(date +"%Y-%m-%d %H:%M:%S")
-echo "                                                             " >> package/base-files/files/etc/banner
-echo "   /███  _     __    __ /█  /█/                   /█         " >> package/base-files/files/etc/banner
-echo "  |_  █ / ████ \ █  /█/| █ /█/  _          /████ | █  /█/    " >> package/base-files/files/etc/banner
-echo "     |█|____  █ \ █/█/ | ███/  / █| █| █| /█__  █| █ /█/     " >> package/base-files/files/etc/banner
-echo " /█  |█ /██████  \ █/  | █ █   | █| █| █|| █  \ █| ███/      " >> package/base-files/files/etc/banner
-echo "| █  |█/██__  █  /█/   | █\ █  | █| █| █|| █  | █| █_ █      " >> package/base-files/files/etc/banner
-echo "|  ███/\ ██████ /█/    | █ \ █\| ███/███/|  ████/| █ \ █\    " >> package/base-files/files/etc/banner
-echo " \___/  \_____/\_/     |_/  \_/ \__/\__/  \____/ |_/  \_/    " >> package/base-files/files/etc/banner
-echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo " %D %C ${build_date}       by JayKwok                       " >> package/base-files/files/etc/banner
-echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo " ----------------------------------------------------------- " >> package/base-files/files/etc/banner
-echo "                                                             " >> package/base-files/files/etc/banner
