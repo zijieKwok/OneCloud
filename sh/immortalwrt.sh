@@ -27,7 +27,7 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-echo 'src-git istoreos https://github.com/zijieKwok/istoreos-nas-packages' >> feeds.conf.default
+
 echo 'src-git small https://github.com/zijieKwok/jay_packages' >> feeds.conf.default
 #echo 'src-git homeproxy https://github.com/immortalwrt/homeproxy' >> feeds.conf.default
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages aria2
