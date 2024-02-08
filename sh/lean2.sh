@@ -9,9 +9,13 @@ sed -i "s/hostname='.*'/hostname='OneCloud'/g" ./package/base-files/files/bin/co
 #修改默认时区
 sed -i "s/timezone='.*'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
-#修改中文显示
-sed -i "s/msgstr "NAS ID"'.*'/msgstr "网络储存"/g" ./feeds/luci/modules/luci-base/po/zh_Hans/base.po
-sed -i "s/msgid "Log in"'.*'/msgid "Login"/g" ./feeds/luci/modules/luci-base/po/zh_Hans/base.po
+##immortalwrt源码增加汉化
+echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "\nmsgid \"Log in\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"登录\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 
 # Modify default NTP server
