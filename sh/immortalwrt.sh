@@ -47,8 +47,8 @@ function git_sparse_clone() {
 
 # 添加额外插件
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-quickstart
-git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-linkease
+# git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-quickstart
+# git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-linkease
 git_sparse_clone main https://github.com/kenzok8/small-package luci-app-filebrowser
 git_sparse_clone main https://github.com/kenzok8/small-package luci-app-pushbot
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
@@ -64,8 +64,8 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
 # quickstart依赖 
-git_sparse_clone master https://github.com/linkease/nas-packages /network/services/quickstart
-git_sparse_clone master https://github.com/linkease/nas-packages /multimedia/ffmpeg-remux
+# git_sparse_clone master https://github.com/linkease/nas-packages /network/services/quickstart
+# git_sparse_clone master https://github.com/linkease/nas-packages /multimedia/ffmpeg-remux
 
 # 科学上网插件依赖
 git_sparse_clone main https://github.com/kenzok8/small-package v2dat
@@ -132,8 +132,8 @@ git_sparse_clone main https://github.com/kenzok8/small-package ddnsto
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # iStore
-#git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
-#git_sparse_clone main https://github.com/linkease/istore luci
+# git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+# git_sparse_clone main https://github.com/linkease/istore luci
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-store
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-lib-taskd
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-lib-xterm
