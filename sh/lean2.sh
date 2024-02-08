@@ -1,7 +1,7 @@
 #!/bin/bash
              
 ##生成版本号
-echo $(date +"%Y%m%d%M") > version
+echo $(TZ=UTC-8 date +"%Y%m%d%M") > version
 
 ##配置ip等
 #sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
@@ -17,7 +17,7 @@ echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "\nmsgid \"Log in\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "\nmsgid \"Login\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"登录\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "\nmsgid \"MAC-Address\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"MAC-地址\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
@@ -32,7 +32,7 @@ sed -i 's/cn.pool.ntp.org/pool.ntp.org/' package/base-files/files/bin/config_gen
 #固件版本号添加个人标识和日期
 [ -e package/lean/default-settings/files/zzz-default-settings ] && sed -i "s/DISTRIB_DESCRIPTION='.*OpenWrt '/DISTRIB_DESCRIPTION='JayKwok($(TZ=UTC-8 date +%Y.%m.%d))@OpenWrt '/g" package/lean/default-settings/files/zzz-default-settings
 #[ ! -e package/lean/default-settings/files/zzz-default-settings ] && sed -i "/DISTRIB_DESCRIPTION='*'/d" package/base-files/files/etc/openwrt_release
-[ ! -e package/lean/default-settings/files/zzz-default-settings ] && echo "DISTRIB_DESCRIPTION='JayKwok($(TZ=UTC-8 date +%Y.%m.%d))@杰 '" >> package/base-files/files/etc/openwrt_release
+[ ! -e package/lean/default-settings/files/zzz-default-settings ] && echo "DISTRIB_DESCRIPTION='JayKwok($(TZ=UTC-8 date +"+%Y年%m月%d日"))@杰 版本号: '" >> package/base-files/files/etc/openwrt_release
 
 # 设置密码为password
 sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/' package/base-files/files/etc/shadow
