@@ -63,6 +63,10 @@ git clone --depth=1 https://github.com/zijieKwok/JacKwok-passwall package/luci-a
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
+# quickstart依赖 
+git_sparse_clone master https://github.com/linkease/nas-packages /network/services/quickstart
+git_sparse_clone master https://github.com/linkease/nas-packages /multimedia/ffmpeg-remux
+
 # 科学上网插件依赖
 git_sparse_clone main https://github.com/kenzok8/small-package v2dat
 git_sparse_clone main https://github.com/kenzok8/small-package lua-maxminddb
