@@ -9,6 +9,9 @@ sed -i "s/hostname='.*'/hostname='OneCloud'/g" ./package/base-files/files/bin/co
 #修改默认时区
 sed -i "s/timezone='.*'/timezone='CST-8'/g" ./package/base-files/files/bin/config_generate
 sed -i "/timezone='.*'/a\\\t\t\set system.@system[-1].zonename='Asia/Shanghai'" ./package/base-files/files/bin/config_generate
+#修改中文显示
+sed -i "s/msgstr "NAS ID"'.*'/msgstr "网络储存"/g" ./feeds/luci/modules/luci-base/po/zh_Hans/base.po
+sed -i "s/msgid "Log in"'.*'/msgid "Login"/g" ./feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 
 # Modify default NTP server
