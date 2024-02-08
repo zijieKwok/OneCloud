@@ -3,6 +3,9 @@
 ##生成版本号
 echo $(TZ=UTC-8 date +"%Y%m%d%M") > version
 
+##Socat更改为端口转发
+sed -i 's/msgstr "Socat"/msgstr "端口转发"/g' feeds/luci/applications/luci-app-socat/po/zh_Hans/socat.po
+
 ##配置ip等
 #sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
 #修改默认IP地址
