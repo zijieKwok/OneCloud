@@ -1,9 +1,9 @@
 #!/bin/bash
              
 ##配置ip等
-#sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
 #修改默认IP地址
-sed -i "s/192\.168\.[0-9]*\.[0-9]*/$OWRT_IP/g" ./package/base-files/files/bin/config_generate
+# sed -i "s/192\.168\.[0-9]*\.[0-9]*/$OWRT_IP/g" ./package/base-files/files/bin/config_generate
 #修改默认主机名
 sed -i "s/hostname='.*'/hostname='OneCloud'/g" ./package/base-files/files/bin/config_generate
 #修改默认时区
@@ -40,12 +40,12 @@ sed -i 's/root:::0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:
 #连接数
 sed -i '/customized in this file/a fs.file-max=102400\nnet.ipv4.neigh.default.gc_thresh1=512\nnet.ipv4.neigh.default.gc_thresh2=2048\nnet.ipv4.neigh.default.gc_thresh3=4096\nnet.netfilter.nf_conntrack_max=65535' package/base-files/files/etc/sysctl.conf
 
-# 修改默认wifi名称ssid为moyulong
-sed -i 's/ssid=OpenWrt/ssid=moyulong/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# 修改默认wifi名称ssid为JayKwok
+sed -i 's/ssid=OpenWrt/ssid=JayKwok/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
-# 修改默认wifi密码key为password
+# 修改默认wifi密码key为12345678
 sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\set wireless.default_radio${devidx}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
