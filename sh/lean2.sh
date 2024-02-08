@@ -1,9 +1,9 @@
 #!/bin/bash
              
 ##配置ip等
-sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
 #修改默认IP地址
-#sed -i "s/192\.168\.[0-9]*\.[0-9]*/$OWRT_IP/g" ./package/base-files/files/bin/config_generate
+sed -i "s/192\.168\.[0-9]*\.[0-9]*/$OWRT_IP/g" ./package/base-files/files/bin/config_generate
 #修改默认主机名
 sed -i "s/hostname='.*'/hostname='OneCloud'/g" ./package/base-files/files/bin/config_generate
 #修改默认时区
@@ -16,7 +16,11 @@ echo -e "\nmsgid \"NAS\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "\nmsgid \"Log in\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"登录\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "\nmsgid \"MAC-Address\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"MAC-地址\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
+##生成版本号
+echo $(date +"%Y%m%d%M") > version
 
 # Modify default NTP server
 echo 'Modify default NTP server...'
