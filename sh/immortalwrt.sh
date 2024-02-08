@@ -46,6 +46,7 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
 git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-quickstart
 git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-linkease
@@ -67,6 +68,9 @@ git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 git clone --depth=1 https://github.com/linkease/nas-packages package/quickstart
 git clone --depth=1 https://github.com/linkease/nas-packages package/linkease
 git clone --depth=1 https://github.com/linkease/nas-packages package/ffmpeg-remux
+
+# DDNS-GO依赖
+git_sparse_clone main https://github.com/sirpdboy/luci-app-ddns-go ddns-go
 
 # 科学上网插件依赖
 git_sparse_clone main https://github.com/kenzok8/small-package v2dat
