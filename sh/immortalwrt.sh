@@ -61,7 +61,7 @@ git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-ho
 git clone --depth=1 https://github.com/zijieKwok/passwall-packages package/passwall-packages
 git clone --depth=1 https://github.com/zijieKwok/JacKwok-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
-git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
 # quickstart依赖 
 git_sparse_clone master https://github.com/linkease/nas-packages /network/services/quickstart
