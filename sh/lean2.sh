@@ -5,7 +5,7 @@ echo $(TZ=UTC-8 date +"%Y%m%d%M") > version
 
 ##Socat更改为端口转发
 sed -i 's/msgstr "Socat"/msgstr "端口转发"/g' feeds/luci/applications/luci-app-socat/po/zh_Hans/socat.po
-##修改ImmortalWrt为OpenWrt
+##修改ImmortalWrt为OneCloud
 sed -i 's/VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),ImmortalWrt)/VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OneCloud)/g' include/version.mk
 sed -i 's/VERSION_MANUFACTURER:=$(if $(VERSION_MANUFACTURER),$(VERSION_MANUFACTURER),ImmortalWrt)/VERSION_MANUFACTURER:=$(if $(VERSION_MANUFACTURER),$(VERSION_MANUFACTURER),OneCloud)/g' include/version.mk
 ##配置ip等
