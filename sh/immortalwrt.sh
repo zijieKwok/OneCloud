@@ -64,8 +64,9 @@ git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
 # quickstart依赖 
-git_sparse_clone master https://github.com/linkease/nas-packages /network/services/quickstart
-git_sparse_clone master https://github.com/linkease/nas-packages /multimedia/ffmpeg-remux
+git clone --depth=1 https://github.com/linkease/nas-packages package/quickstart
+git clone --depth=1 https://github.com/linkease/nas-packages package/linkease
+git clone --depth=1 https://github.com/linkease/nas-packages package/ffmpeg-remux
 
 # 科学上网插件依赖
 git_sparse_clone main https://github.com/kenzok8/small-package v2dat
