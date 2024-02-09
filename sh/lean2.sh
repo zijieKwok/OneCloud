@@ -8,6 +8,8 @@ sed -i 's/msgstr "Socat"/msgstr "端口转发"/g' feeds/luci/applications/luci-a
 ##修改ImmortalWrt为OneCloud
 sed -i 's/VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),ImmortalWrt)/VERSION_DIST:=$(if $(VERSION_DIST),$(VERSION_DIST),OneCloud)/g' include/version.mk
 sed -i 's/VERSION_MANUFACTURER:=$(if $(VERSION_MANUFACTURER),$(VERSION_MANUFACTURER),ImmortalWrt)/VERSION_MANUFACTURER:=$(if $(VERSION_MANUFACTURER),$(VERSION_MANUFACTURER),OneCloud)/g' include/version.mk
+##修改upnp到NAS菜单
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-upnp/root/usr/share/luci/menu.d/luci-app-upnp.json
 ##配置ip等
 #sed -i 's/192.168.1.1/192.168.2.110/g' package/base-files/files/bin/config_generate
 #修改默认IP地址
