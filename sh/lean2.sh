@@ -27,7 +27,9 @@ echo -e "msgstr \"网络存储\"" >> feeds/luci/modules/luci-base/po/zh_Hans/bas
 echo -e "\nmsgid \"Login\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"登录\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "\nmsgid \"MAC-Address\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
-echo -e "msgstr \"MAC-地址\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"MAC地址\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "\nmsgid \"IPv4-Address\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
+echo -e "msgstr \"IPv4地址\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 
 # Modify default NTP server
 echo 'Modify default NTP server...'
