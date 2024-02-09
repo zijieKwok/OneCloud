@@ -163,9 +163,9 @@ jobs:
       run: |
           sudo apt install img2simg
           ver="v0.3.2"
-          curl -L -o ./AmlImg https://github.com/zijieKwok/AmlImg/releases/download/$ver/AmlImg_${ver}_linux_amd64
+          curl -L -o ./AmlImg https://github.com/rmoyulong/AmlImg/releases/download/$ver/AmlImg_${ver}_linux_amd64
           chmod +x ./AmlImg
-          curl -L -o ./uboot.img https://github.com/zijieKwok/u-boot-onecloud/releases/download/Onecloud_Uboot_24.02.05_22.01.42/eMMC.burn.img
+          curl -L -o ./uboot.img https://github.com/rmoyulong/u-boot-onecloud/releases/download/Onecloud_Uboot_23.12.24_18.15.09/eMMC.burn.img
           ./AmlImg unpack ./uboot.img burn/
           echo "::endgroup::"
           
@@ -222,7 +222,7 @@ jobs:
       #if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        gzip immortalwrt-meson-meson8b-thunder-onecloud-rootfs.tar
+        gzip onecloud-meson-meson8b-thunder-onecloud-rootfs.tar
         rm -rf packages
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
