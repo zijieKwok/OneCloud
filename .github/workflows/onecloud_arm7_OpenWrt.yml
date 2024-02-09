@@ -78,7 +78,7 @@ jobs:
         chmod +x ./AmlImg
         curl -L -o ./uboot.img https://github.com/zijieKwok/u-boot-onecloud/releases/download/Onecloud_Uboot_24.02.05_22.01.42/eMMC.burn.img
         mkdir -p openwrt/out 
-        curl -L -o openwrt/out/onecloud.img.gz https://github.com/zijieKwok/OneCloud/releases/download/openwrt_s905_mxq-pro+_R24.1.13_k6.1.75-flippy-87+/immortalwrt-meson-meson8b-thunder-onecloud-ext4-emmc.img.gz
+        curl -L -o openwrt/out/onecloud.img.gz https://github.com/zijieKwok/OneCloud/releases/download/OpenWrt_immortalwrt_24.02.09_09.19.15/immortalwrt-meson-meson8b-thunder-onecloud-ext4-emmc.img.gz
 
         
         idtype=0
