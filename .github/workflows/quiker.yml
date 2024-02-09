@@ -43,7 +43,7 @@ jobs:
     steps:
 
     - name: 清理服务器空间(Ubuntu)
-      uses: rmoyulong/free-disk-space@main
+      uses: zijieKwok/free-disk-space@main
       with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
@@ -274,7 +274,7 @@ jobs:
         echo "OWRT_DATE=$OWRT_DATE" >> $GITHUB_ENV
 
     - name: 上传直刷固件
-      uses: rmoyulong/action-gh-release@master
+      uses: zijieKwok/action-gh-release@master
       if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -290,13 +290,13 @@ jobs:
           地址：${{env.OWRT_IP}}
 
     - name: 清理Releases
-      uses: rmoyulong/delete-older-releases@master
+      uses: zijieKwok/delete-older-releases@master
       with:
         keep_latest: 10
         delete_tags: true
 
     - name: 清理Workflows
-      uses: rmoyulong/delete-workflow-runs@main
+      uses: zijieKwok/delete-workflow-runs@main
       with:
         retain_days: 0
         keep_minimum_runs: 1
