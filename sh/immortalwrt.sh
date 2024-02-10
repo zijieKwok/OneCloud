@@ -13,6 +13,7 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 rm -rf feeds/package/luci-app-turboacc
 rm -rf package/luci-app-turboacc
+rm -rf feeds/luci/themes/luci-theme-bootstrap
 
 #设置armv7 32位的openclash
 mkdir -p files/etc/openclash/core
@@ -152,3 +153,4 @@ sudo chmod -Rf 755 package/luci-app-onliner
 
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
+
