@@ -146,7 +146,7 @@ jobs:
               REPO_BRANCH="master"
               TAGS_NAME="lede"
           elif [[ "${{ inputs.OWRT_URL }}" == *"immortalwrt"* ]]; then
-              REPO_URL="https://github.com/zijieKwok/immortalwrt"
+              REPO_URL="https://github.com/immortalwrt/immortalwrt"
               REPO_BRANCH="master"
               TAGS_NAME="immortalwrt"
           else
