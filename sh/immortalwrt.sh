@@ -13,7 +13,6 @@ rm -rf feeds/luci/applications/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-homeproxy
 rm -rf feeds/package/luci-app-turboacc
 rm -rf package/luci-app-turboacc
-rm -rf feeds/luci/themes/luci-theme-bootstrap
 
 #设置armv7 32位的openclash
 mkdir -p files/etc/openclash/core
