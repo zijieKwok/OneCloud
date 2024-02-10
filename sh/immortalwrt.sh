@@ -65,11 +65,6 @@ git clone --depth=1 https://github.com/zijieKwok/JacKwok-passwall package/luci-a
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
 
-# quickstart依赖 
-git clone --depth=1 https://github.com/linkease/nas-packages package/quickstart
-git clone --depth=1 https://github.com/linkease/nas-packages package/linkease
-git clone --depth=1 https://github.com/linkease/nas-packages package/ffmpeg-remux
-
 # DDNS-GO依赖
 git_sparse_clone main https://github.com/sirpdboy/luci-app-ddns-go ddns-go
 
