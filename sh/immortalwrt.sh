@@ -27,9 +27,8 @@ function git_sparse_clone() {
   cd .. && rm -rf $repodir
 }
 
-echo 'src-git linkease_nas https://github.com/linkease/nas-packages.git;master' >> feeds.conf.default
-echo 'src-git linkease_nas_luci https://github.com/linkease/nas-packages-luci.git;main' >> feeds.conf.default
-echo 'src-git small https://github.com/zijieKwok/JacKwok-passwall' >> feeds.conf.default
+echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
+echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 #echo 'src-git homeproxy https://github.com/immortalwrt/homeproxy' >> feeds.conf.default
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages aria2
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages ariang
@@ -74,15 +73,46 @@ git_sparse_clone main https://github.com/sirpdboy/luci-app-ddns-go ddns-go
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-onliner
 sudo chmod -Rf 755 package/luci-app-onliner
 
+# 晶晨宝盒
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-amlogic
+#sed -i "s|firmware_repo.*|firmware_repo 'https://github.com/ophub/luci-app-amlogic'|g" package/luci-app-amlogic/root/etc/config/amlogic
+#sed -i "s|kernel_path.*|kernel_path 'https://github.com/ophub/kernel'|g" package/luci-app-amlogic/root/etc/config/amlogic
+#sed -i "s|ARMv8|ARMv8_PLUS|g" package/luci-app-amlogic/root/etc/config/amlogic
+
+# SmartDNS
+git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+
 # msd_lite
 git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-app-msd_lite
 git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
+
+# MosDNS
+#git_sparse_clone main https://github.com/kenzok8/small-package luci-app-mosdns
+#git_sparse_clone main https://github.com/kenzok8/small-package mosdns
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+
+# DDNS.to
+git_sparse_clone main https://github.com/kenzok8/small-package luci-app-ddnsto
+git_sparse_clone main https://github.com/kenzok8/small-package ddnsto
+
+# Alist
+#git_sparse_clone main https://github.com/kenzok8/small-package luci-app-alist
+#git_sparse_clone main https://github.com/kenzok8/small-package alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+
+# iStore
+# git_sparse_clone main https://github.com/linkease/istore-ui app-store-ui
+# git_sparse_clone main https://github.com/linkease/istore luci
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-store
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-lib-taskd
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-lib-xterm
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages taskd
 
 #设置armv7 32位的openclash
 mkdir -p files/etc/openclash/core
 mkdir -p files/etc/profile.d
 mkdir -p files/root
-
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/dev/clash-linux-armv7.tar.gz"
 CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/dev/premium\?ref\=core | grep download_url | grep armv7 | awk -F '"' '{print $4}')
