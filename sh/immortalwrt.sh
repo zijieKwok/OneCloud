@@ -43,6 +43,33 @@ git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-a
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
 
+# 添加额外插件
+git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
+git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
+git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-quickstart
+git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-linkease
+git_sparse_clone main https://github.com/kenzok8/small-package luci-app-filebrowser
+git_sparse_clone main https://github.com/kenzok8/small-package luci-app-pushbot
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-turboacc
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-usb-printer
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-easymesh
+
+# 科学上网插件
+git clone --depth=1 https://github.com/immortalwrt/homeproxy package/luci-app-homeproxy
+git clone --depth=1 https://github.com/zijieKwok/passwall-packages package/passwall-packages
+git clone --depth=1 https://github.com/zijieKwok/JacKwok-passwall package/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+git_sparse_clone dev https://github.com/vernesong/OpenClash luci-app-openclash
+
+# Themes
+git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+
+# DDNS-GO依赖
+git_sparse_clone main https://github.com/sirpdboy/luci-app-ddns-go ddns-go
+
+
 # 在线用户
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-onliner
 sudo chmod -Rf 755 package/luci-app-onliner
@@ -56,12 +83,6 @@ mkdir -p files/etc/openclash/core
 mkdir -p files/etc/profile.d
 mkdir -p files/root
 
-# Themes
-git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-
-# DDNS-GO依赖
-git_sparse_clone main https://github.com/sirpdboy/luci-app-ddns-go ddns-go
 
 CLASH_DEV_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/dev/dev/clash-linux-armv7.tar.gz"
 CLASH_TUN_URL=$(curl -fsSL https://api.github.com/repos/vernesong/OpenClash/contents/dev/premium\?ref\=core | grep download_url | grep armv7 | awk -F '"' '{print $4}')
