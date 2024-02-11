@@ -145,10 +145,10 @@ jobs:
               REPO_URL="https://github.com/coolsnowwolf/lede"
               REPO_BRANCH="master"
               TAGS_NAME="lede"
-          elif [[ "${{ inputs.OWRT_URL }}" == *"immortalwrt"* ]]; then
+          elif [[ "${{ inputs.OWRT_URL }}" == *"onecloud"* ]]; then
               REPO_URL="https://github.com/zijieKwok/immortalwrt"
               REPO_BRANCH="master"
-              TAGS_NAME="openwrt"
+              TAGS_NAME="onecloud"
           else
               echo "Unknown source code repository."
               exit 1
