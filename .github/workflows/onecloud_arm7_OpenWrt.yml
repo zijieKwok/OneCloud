@@ -155,7 +155,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: OpenWrt_${{ env.OWRT_SOURCE }}_${{ env.OWRT_DATE }}
+        tag_name: OpenWrt_onecloud_${{ env.OWRT_DATE }}
         files: openwrt/out/*
         body: |
           自用玩客云${{ env.OWRT_TYPE }}直刷固件！使用双USB公头线刷机！
