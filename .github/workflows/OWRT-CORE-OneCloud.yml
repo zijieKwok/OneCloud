@@ -148,7 +148,7 @@ jobs:
           elif [[ "${{ inputs.OWRT_URL }}" == *"immortalwrt"* ]]; then
               REPO_URL="https://github.com/zijieKwok/immortalwrt"
               REPO_BRANCH="master"
-              TAGS_NAME="immortalwrt"
+              TAGS_NAME="onecloud"
           else
               echo "Unknown source code repository."
               exit 1
