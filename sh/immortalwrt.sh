@@ -45,7 +45,6 @@ git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpu
 # 添加额外插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-quickstart
 git clone --depth=1 https://github.com/zijieKwok/istoreos-nas-packages package/luci-app-linkease
 git_sparse_clone main https://github.com/kenzok8/small-package luci-app-filebrowser
 git_sparse_clone main https://github.com/kenzok8/small-package luci-app-pushbot
